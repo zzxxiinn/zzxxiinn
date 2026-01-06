@@ -1,0 +1,45 @@
+# ==================== uv 包管理器专属 ====================
+# uv 生成的锁文件（可选：如果团队统一用 uv，可提交；否则忽略）
+# uv.lock
+# uv 缓存目录
+.uv/
+# uv 生成的虚拟环境（默认路径）
+.venv/
+# uv 安装的本地包目录（如果使用 --editable 安装）
+*.egg-info/
+
+# ==================== Python 通用忽略 ====================
+# 字节码文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 分发/打包文件
+dist/
+build/
+*.egg
+*.whl
+
+# 环境变量文件（敏感信息）
+.env
+.env.local
+.env.*.local
+
+# 日志文件
+*.log
+logs/
+
+# 数据文件（按需调整，如大数据/临时数据）
+*.csv
+*.xlsx
+*.db
+data/
+tmp/
+temp/
+
+# IDE/编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store  # macOS 系统文件

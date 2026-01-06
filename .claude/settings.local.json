@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(rm:*)",
+      "Bash(tree:*)",
+      "Bash(git -C /Users/zhangxin/code/zzxxiinn log --oneline)",
+      "Bash(git -C /Users/zhangxin/code/zzxxiinn remote -v)"
+    ]
+  }
+}
