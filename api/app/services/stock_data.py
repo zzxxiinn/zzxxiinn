@@ -36,8 +36,13 @@ class StockService:
         try:
             # 3. 调用 AkShare 接口 (数据源：东方财富)
             # adjust="qfq" 表示前复权，看盘一般都看复权价
-            df = ak.stock_zh_a_hist(symbol=clean_code, period="daily", start_date=start_str, end_date=end_str,
-                                    adjust="qfq")
+            df = ak.stock_zh_a_hist(
+                symbol=clean_code,
+                period="daily",
+                start_date=start_str,
+                end_date=end_str,
+                adjust="qfq",
+            )
 
             if df.empty:
                 return None
@@ -48,22 +53,23 @@ class StockService:
 
             kline_data = []
             for _, row in df.iterrows():
-                kline_data.append({
-                    "time": row['日期'],  # 格式已经是 "2024-01-01"
-                    "open": row['开盘'],
-                    "high": row['最高'],
-                    "low": row['最低'],
-                    "close": row['收盘'],
-                    "volume": row['成交量']
-                })
+                kline_data.append(
+                    {
+                        "time": row["日期"],  # 格式已经是 "2024-01-01"
+                        "open": row["开盘"],
+                        "high": row["最高"],
+                        "low": row["最低"],
+                        "close": row["收盘"],
+                        "volume": row["成交量"],
+                    }
+                )
 
             return {
                 "symbol": code,
                 "data": kline_data,
-                "latest_price": kline_data[-1]["close"] if kline_data else 0
+                "latest_price": kline_data[-1]["close"] if kline_data else 0,
             }
 
         except Exception as e:
             print(f"❌ AkShare Error: {e}")
-            # 如果报错，可能是代码不对，或者网络问题
             return None

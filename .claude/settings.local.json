@@ -5,7 +5,10 @@
       "Bash(rm:*)",
       "Bash(tree:*)",
       "Bash(git -C /Users/zhangxin/code/zzxxiinn log --oneline)",
-      "Bash(git -C /Users/zhangxin/code/zzxxiinn remote -v)"
+      "Bash(git -C /Users/zhangxin/code/zzxxiinn remote -v)",
+      "Bash(bun add:*)",
+      "Bash(bun run format:check:*)",
+      "Bash(bun run format:*)"
     ]
   }
 }
