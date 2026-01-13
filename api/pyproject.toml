@@ -13,3 +13,8 @@ dependencies = [
     "uvicorn>=0.40.0",
     "yfinance>=1.0",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=25.12.0",
+]

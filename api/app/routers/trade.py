@@ -24,7 +24,7 @@ def read_trades(session: Session = Depends(get_session)):
     trades = session.exec(statement).all()
     return trades
 
- 
+
 @router.delete("/{id}", status_code=204)
 def delete_trade(trade_id: int, session: Session = Depends(get_session)):
     """删除单个交易记录"""
@@ -34,4 +34,3 @@ def delete_trade(trade_id: int, session: Session = Depends(get_session)):
     session.delete(trade)
     session.commit()
     return None
-

@@ -16,18 +16,20 @@ async def lifespan(app: FastAPI):
     # --- 关闭时运行 (Shutdown) ---
     print("🛑 System Shutting down...")
 
+
 app = FastAPI(lifespan=lifespan)
 
 # 跨域配置
-app.add_middleware( 
-    CORSMiddleware, 
+app.add_middleware(
+    CORSMiddleware,
     allow_origins=["*"],
-    allow_methods=["*"], 
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(stock.router)
 app.include_router(trade.router)
+
 
 @app.get("/")
 def read_root():
